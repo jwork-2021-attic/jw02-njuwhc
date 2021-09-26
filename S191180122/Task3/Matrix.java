@@ -1,8 +1,7 @@
 package S191180122.Task3;
 
-public class Line {
-
-    public Line(int length) {
+public class Matrix {
+    public Matrix(int length) {
         this.positions = new Position[length];
     }
 

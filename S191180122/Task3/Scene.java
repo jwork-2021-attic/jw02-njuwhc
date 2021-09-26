@@ -5,11 +5,11 @@ import java.io.IOException;
 
 public class Scene {
     public static void main(String[] args) throws IOException {
-        Line line = new Line(64);
+        Matrix matrix = new Matrix(64);
         ListElf list =new ListElf(64);
         for(int i=0;i<64;i++) {
             Elf elf = new Elf();
-            line.put(elf, i);
+            matrix.put(elf, i);
             list.put(elf, i);
         }
         Snake theSnake = Snake.getTheSnake();
@@ -20,7 +20,7 @@ public class Scene {
 
         theSnake.setSorter(sorter); //使用这种排序方法
 
-        String log = theSnake.lineUp(line,list);
+        String log = theSnake.lineUp(matrix,list);
 
         BufferedWriter writer;
         writer = new BufferedWriter(new FileWriter("result.txt"));

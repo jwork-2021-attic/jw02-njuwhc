@@ -19,7 +19,7 @@ public class Snake {
         this.sorter = sorter;
     }
 
-    public String lineUp(Line line,ListElf list) {
+    public String lineUp(Matrix matrix,ListElf list) {
 
         String log = new String();
 
@@ -27,7 +27,7 @@ public class Snake {
             return null;
         }
 
-        Linable[] linables = line.toArray();
+        Linable[] linables = matrix.toArray();
         int[] ranks = new int[linables.length];
 
         for (int i = 0; i < linables.length; i++) {
@@ -41,7 +41,7 @@ public class Snake {
 
         for (String step : sortSteps) {
             this.execute(step,list);
-            log += line.toString();
+            log += matrix.toString();
             log += "\n[frame]\n";
         }
 
